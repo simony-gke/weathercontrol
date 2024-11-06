@@ -12,11 +12,6 @@ import (
 	pb "github.com/simony-gke/weathercontrol/proto"
 )
 
-// Define the port
-const (
-	port = ":50051"
-)
-
 // weatherData stores the current weather information
 type weatherData struct {
 	weatherType string
@@ -59,7 +54,12 @@ func (s *server) SetWeather(ctx context.Context, in *pb.SetWeatherRequest) (*pb.
 }
 
 func main() {
-	lis, err := net.Listen("tcp", port)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "50051" // Default port if PORT is not set
+	}
+
+	lis, err := net.Listen("tcp", ":"+port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
