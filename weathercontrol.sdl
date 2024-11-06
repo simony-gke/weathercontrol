@@ -1,0 +1,8 @@
+// It's only a single table.
+
+// You just select the most recent weather in the table.
+CREATE TABLE Weather (
+  WeatherType STRING(MAX),
+  Intensity INT64,
+  Timestamp TIMESTAMP,
+) PRIMARY KEY (WeatherType, Intensity, Timestamp);
