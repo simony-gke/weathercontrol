@@ -9,7 +9,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	pb "test.com/weathercontrol/proto"
+	pb "github.com/simony-gke/weathercontrol/proto"
 )
 
 // Define the port
