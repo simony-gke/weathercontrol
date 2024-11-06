@@ -1,4 +1,4 @@
-module test.com/weathercontrol
+module github.com/simony-gke/weathercontrol
 
 go 1.23
 
